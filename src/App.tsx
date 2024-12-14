@@ -7,19 +7,19 @@ const shoes = [
     marginLeft: "ml-[0%]",
     bgColor: "bg-red-700",
     shoeName: "Jordan 1 red",
-    img: "/src/assets/red-nike.png",
+    img: "/assets/red-nike.png",
   },
   {
     marginLeft: "ml-[-100%]",
     bgColor: "bg-blue-700",
     shoeName: "Jordan 1 blue",
-    img: "/src/assets/blue-nike.png",
+    img: "/assets/blue-nike.png",
   },
   {
     marginLeft: "ml-[-200%]",
     bgColor: "bg-green-700",
     shoeName: "Jordan 1 green",
-    img: "/src/assets/green-nike.png",
+    img: "/assets/green-nike.png",
   },
 ];
 
