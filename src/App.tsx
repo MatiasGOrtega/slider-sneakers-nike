@@ -23,7 +23,7 @@ const shoes = [
   },
 ];
 
-const shoesSizeOptions = [ 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5 ];
+const shoesSizeOptions = [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5];
 
 function App() {
   const [currentShoe, setCurrentShoe] = useState(0);
@@ -46,12 +46,12 @@ function App() {
 
   const handleShowShoeColor = (index: number) => {
     setCurrentShoe(index);
-  }
+  };
 
   return (
-    <div>
+    <div className={`${shoes[currentShoe].bgColor}`}>
       <main
-        className={`h-screen overflow-hidden ${shoes[currentShoe].bgColor} font-tomorrow text-white relative uppercase transition-colors duration-500`}
+        className={`h-screen overflow-hidden font-tomorrow text-white relative uppercase transition-colors duration-500 max-w-screen-2xl m-auto`}
       >
         <Header />
 
@@ -62,8 +62,13 @@ function App() {
         <SlideShoes currentShoe={currentShoe} shoes={shoes} />
 
         <section className="sm:absolute relative sm:bottom-4 bottom-0 sm:left-8 left-0 sm:p-0 p-4 grid gap-8">
-          <div className="grid gap-8 visible-text animate-visible" key={currentShoe}>
-            <h3 className="text-3xl shoe-name">{shoes[currentShoe].shoeName}</h3>
+          <div
+            className="grid gap-8 visible-text animate-visible"
+            key={currentShoe}
+          >
+            <h3 className="text-3xl shoe-name">
+              {shoes[currentShoe].shoeName}
+            </h3>
             <ul className="text-sm grid gap-1 [&>li]:grid [&>li]:gap-1">
               <li>
                 <h5>Release Date</h5>
@@ -95,7 +100,9 @@ function App() {
                   <button
                     onClick={() => handleShowShoeColor(index)}
                     className={`btn-color ${shoe.bgColor} ${
-                      currentShoe === index ? "focus:border-white focus:border-2" : ""
+                      currentShoe === index
+                        ? "focus:border-white focus:border-2"
+                        : ""
                     }`}
                   ></button>
                 </li>
@@ -111,10 +118,10 @@ function App() {
             your trust.
           </p>
           <div className="[&>button]:w-12 [&>button]:aspect-square [&>button]:border [&>button]:rounded-full flex gap-4 text-2xl [&>button]:transition-colors [&>button:hover]:border-2 [&>button]:flex [&>button]:justify-center [&>button]:items-center">
-            <button onClick={handleShowPrevShoe}>
+            <button className="group" onClick={handleShowPrevShoe}>
               <ArrowLeft />
             </button>
-            <button onClick={handleShowNextShoe}>
+            <button className="group" onClick={handleShowNextShoe}>
               <ArrowRight />
             </button>
           </div>
