@@ -61,7 +61,7 @@ function App() {
 
         <SlideShoes currentShoe={currentShoe} shoes={shoes} />
 
-        <section className="absolute bottom-4 left-8 grid gap-8">
+        <section className="sm:absolute relative sm:bottom-4 bottom-0 sm:left-8 left-0 sm:p-0 p-4 grid gap-8">
           <div className="grid gap-8 visible-text animate-visible" key={currentShoe}>
             <h3 className="text-3xl shoe-name">{shoes[currentShoe].shoeName}</h3>
             <ul className="text-sm grid gap-1 [&>li]:grid [&>li]:gap-1">
@@ -78,7 +78,7 @@ function App() {
 
           <div className="grid gap-2">
             <h4 className="font-semibold">Select size (us)</h4>
-            <ul className="grid gap-2 grid-cols-5 [&>li>button]:w-12 [&>li>button]:aspect-square [&>li>button]:border [&>li>button]:border-white [&>li>button:hover]:bg-white [&>li>button:hover]:text-black [&>li>button]:transition-colors">
+            <ul className="grid gap-2 grid-cols-5 w-[300px] [&>li>button]:w-12 [&>li>button]:aspect-square [&>li>button]:border [&>li>button]:border-white [&>li>button:hover]:bg-white [&>li>button:hover]:text-black [&>li>button]:transition-colors">
               {shoesSizeOptions.map((size, index) => (
                 <li key={index}>
                   <button>{size}</button>
@@ -95,7 +95,7 @@ function App() {
                   <button
                     onClick={() => handleShowShoeColor(index)}
                     className={`btn-color ${shoe.bgColor} ${
-                      currentShoe === index ? "border-2 border-white focus:border-white focus:border-2" : ""
+                      currentShoe === index ? "focus:border-white focus:border-2" : ""
                     }`}
                   ></button>
                 </li>
@@ -104,7 +104,7 @@ function App() {
           </div>
         </section>
 
-        <section className="absolute bottom-4 right-8 max-w-[300px] normal-case grid gap-6">
+        <section className="sm:absolute relative sm:bottom-4 bottom-0 sm:right-8 right-0 max-w-[300px] normal-case grid gap-6 sm:p-0 p-4">
           <p>
             The quality is excellent, packed reliably, and the color is a dream.
             The USS store is excellent. Thank you!!! We strive to earn and keep
